@@ -1,5 +1,5 @@
-# [Your Name] Portfolio
-Hi, I'm [Your Name], a C# developer specializing in industrial automation, data visualization, and real-time monitoring solutions. Welcome to my professional portfolio, showcasing my skills, experience, and projects like PowerMonitorAdvanced, a power quality monitoring tool built for FactoryTalk Optix.
+# Vikram Lokhande Portfolio
+Hi, I'm Vikram R. Lokhande, a Library and Solution Architect specializing in industrial automation, data visualization, and real-time monitoring solutions. Welcome to my professional portfolio, showcasing my skills, experience, and projects like PowerMonitorAdvanced, a power quality monitoring tool built for FactoryTalk Optix.
 
 ![Profile Picture](assets/profile-pic.png)
 
