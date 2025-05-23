@@ -128,6 +128,7 @@ The Home tab offers a real-time dashboard showing key power quality metrics like
 - Quickly spot issues like voltage drops or phase imbalances.
 - Use clear visuals to understand power performance at a glance.
 
+
 ### 2. Energy: Live Energy and Demand Dashboard
 #### What It Does
 The Energy tab shows live data on energy consumption and demand, helping you track power usage and efficiency.
