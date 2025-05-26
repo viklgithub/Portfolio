@@ -7,7 +7,7 @@ Hi, I'm Vikram R. Lokhande, a Library and Solution Architect specializing in ind
 - **Role**: Software Developer specializing in industrial automation and SCADA systems
 - **Skills**: C#, FactoryTalk Optix, Wonderware InTouch, Schneider Citect, Quick Scripts, JSON, HTML, .NET
 - **Focus**: Designing and implementing real-time monitoring solutions, including power quality dashboards and script conversions for industrial applications
-- **Experience**: Over 12 years in industrial automation, with expertise in converting Citect Cicode to Wonderware Quick Scripts and developing intuitive interfaces for power monitoring
+- **Experience**: Over 12 years in industrial automation, with expertise in Rockwell Alleb-Bradely Products
 - **Contact**: [LinkedIn](https://linkedin.com/in/vikram-lokhande) | [Email](mailto:vikram.lokhande@example.com) | [Portfolio Site](https://yourname.com)
 - **Resume**: [Download PDF](assets/resume.pdf)
 
