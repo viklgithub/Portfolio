@@ -4,10 +4,11 @@ Hi, I'm Vikram R. Lokhande, a Library and Solution Architect specializing in ind
 <img src="assets/profile-pic.png" alt="Profile Picture" width="200" />
 
 ## About Me
-- **Role**: Software Developer with expertise in industrial automation
-- **Skills**: C#, FactoryTalk Optix, ECharts, JSON, HTML, .NET
-- **Focus**: Building intuitive dashboards for power monitoring and IoT
-- **Contact**: [LinkedIn](https://linkedin.com/in/yourprofile) | [Email](mailto:youremail@example.com) | [Portfolio Site](https://yourname.com)
+- **Role**: Software Developer specializing in industrial automation and SCADA systems
+- **Skills**: C#, FactoryTalk Optix, Wonderware InTouch, Schneider Citect, Quick Scripts, JSON, HTML, .NET
+- **Focus**: Designing and implementing real-time monitoring solutions, including power quality dashboards and script conversions for industrial applications
+- **Experience**: Over 12 years in industrial automation, with expertise in converting Citect Cicode to Wonderware Quick Scripts and developing intuitive interfaces for power monitoring
+- **Contact**: [LinkedIn](https://linkedin.com/in/vikram-lokhande) | [Email](mailto:vikram.lokhande@example.com) | [Portfolio Site](https://yourname.com)
 - **Resume**: [Download PDF](assets/resume.pdf)
 
 ## Key Projects
@@ -17,7 +18,7 @@ Hi, I'm Vikram R. Lokhande, a Library and Solution Architect specializing in ind
 3. **[Project3](projects/Project3/README.md)**: An IoT monitoring script for [Purpose], showcasing [Key Feature].
 
 ## Professional Experience
-Explore my career journey in the [Experience Timeline](experience/timeline.md), detailing my roles and contributions in industrial automation and software development.
+Explore my 12+ year career in industrial automation in the [Experience Timeline](experience/timeline.md), detailing my roles and contributions at Rockwell Automation and beyond.
 
 ## Education & Skills
 - **Education**: [See Details](docs/education.md)
