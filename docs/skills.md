@@ -1,0 +1,1 @@
+- **Languages**: English (Fluent), Hindi (Fluent), Marathi (Native)
