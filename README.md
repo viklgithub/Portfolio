@@ -17,6 +17,10 @@ Hi, I'm Vikram R. Lokhande, a Library and Solution Architect specializing in ind
 2. **[Project2](projects/Project2/README.md)**: A data visualization dashboard for [Purpose], built with [Tech Stack].
 3. **[Project3](projects/Project3/README.md)**: An IoT monitoring script for [Purpose], showcasing [Key Feature].
 
+
+### Latest Work
+- FY2025 Achievements
+
 ## Professional Experience
 Explore my 12+ year career in industrial automation in the [Experience Timeline](experience/timeline.md), detailing my roles and contributions at Rockwell Automation and beyond.
 
