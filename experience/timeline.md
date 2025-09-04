@@ -1,7 +1,10 @@
 
+# 🧭 Career Timeline – Vikram Lokhande
+
 ---
 
-## 🏢 Rockwell Automation
+## 🏢 Rockwell Automation (Total: 7 yrs 6 mos)
+
 ### 📌 Library & Solution Architect (Mar 2022 – Present) | Pune, India
 - Managing six different libraries within the Device Object Library.
 - Leading a team of 10+ developers for reviews, testing, and support.
@@ -27,7 +30,8 @@
 
 ---
 
-## 🏢 Capgemini
+## 🏢 Capgemini (Total: 1 yr 1 mo)
+
 ### 📌 Consultant (Apr 2017 – Apr 2018) | Pune, India
 - Led testing for Rockwell Automation products (manual, regression, automated).
 - Built Python-based test frameworks and conducted firmware testing.
@@ -37,7 +41,8 @@
 
 ---
 
-## 🏢 Rockwell Automation
+## 🏢 Rockwell Automation (Total: 2 yrs 6 mos)
+
 ### 📌 Project Engineer (Nov 2014 – Apr 2017) | Pune, India
 - Specialized in SCADA, HMI, and PLC development.
 - Migrated third-party systems to Allen-Bradley platforms.
@@ -48,7 +53,8 @@
 
 ---
 
-## 🏢 CIC Engineers, Pune
+## 🏢 CIC Engineers, Pune (Total: 2 yrs 1 mo)
+
 ### 📌 Project Engineer (Nov 2012 – Nov 2014)
 - Installed and commissioned ABB DCS systems.
 - Calibrated Siemens field instruments and tested PLC panels.
