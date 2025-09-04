@@ -19,7 +19,7 @@ Hi, I'm Vikram R. Lokhande, a Library and Solution Architect specializing in ind
 
 
 ### Latest Work
-- FY2025 Achievements
+- FY2025 Achievements: [See Details](docs/FY2025.md)
 
 ## Professional Experience
 Explore my 12+ year career in industrial automation in the [Experience Timeline](experience/timeline.md), detailing my roles and contributions at Rockwell Automation and beyond.
