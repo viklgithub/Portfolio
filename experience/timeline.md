@@ -15,7 +15,11 @@
 - Conducting AOI/HMI workshops and building reusable solutions.
 - Developed Library OnCourse Demo and application examples.
 
-**Skills:** Library Development, PlantPAx, FactoryTalk Optix, Studio 5000, DevOps, C#, SQLite
+**Skills:**
+- Core: Library Development, PlantPAx, Device Object Library, FactoryTalk Optix, Rockwell Studio 5000, ControlLogix
+- Programming & Tools: C#, HTML, JavaScript, SQLite, DevOps, CI/CD, Automated Testing
+- Specialized: AOI Standardization, ACM Configuration, HMI Design, Optix C# Integration
+- Other: Solution Architecture, Product Development, Release Management
 
 ---
 
