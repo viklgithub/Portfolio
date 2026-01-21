@@ -14,8 +14,7 @@ Hi, I'm Vikram R. Lokhande, a Library and Solution Architect specializing in ind
 ## Key Projects
 1. **[PowerMonitorAdvanced](projects/PowerMonitorAdvanced/README.md)**: A real-time power quality and energy monitoring faceplate for FactoryTalk Optix, featuring dashboards for voltage, current, and harmonics.
    ![PowerMonitorAdvanced Home Tab](assets/powermonitor-home.gif)
-2. **[Project2](projects/Project2/README.md)**: A data visualization dashboard for [Purpose], built with [Tech Stack].
-3. **[Project3](projects/Project3/README.md)**: An IoT monitoring script for [Purpose], showcasing [Key Feature].
+
 
 
 ### Latest Work
