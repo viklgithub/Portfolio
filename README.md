@@ -1,7 +1,7 @@
 # Vikram Lokhande Portfolio
 Hi, I'm Vikram R. Lokhande, a Library and Solution Architect specializing in industrial automation, data visualization, and real-time monitoring solutions. Welcome to my professional portfolio, showcasing my skills, experience, and projects like PowerMonitorAdvanced, a power quality monitoring tool built for FactoryTalk Optix.
 
-<img src="assets/profile-pic.png" alt="Profile Picture" width="200" />
+<img src="assets/NewProfilePic.jpeg" alt="Profile Picture" width="200" />
 
 ## About Me
 - **Role**: Software Developer specializing in industrial automation and SCADA systems
