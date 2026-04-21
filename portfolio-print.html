@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Vikram R. Lokhande — Portfolio</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  
+  @media print {
+    body { background: white; color: #333; }
+    a { color: #0066cc; text-decoration: underline; }
+    .page-break { page-break-after: always; }
+    h1, h2, h3 { page-break-after: avoid; }
+    ul { page-break-inside: avoid; }
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #f5f5f5;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+  }
+  
+  .container {
+    background: white;
+    padding: 40px;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  
+  header {
+    border-bottom: 3px solid #0066cc;
+    margin-bottom: 30px;
+    padding-bottom: 25px;
+  }
+  
+  .header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin-bottom: 15px;
+  }
+  
+  h1 { font-size: 2.2em; color: #000; margin-bottom: 5px; }
+  
+  .title { font-size: 1.1em; color: #0066cc; font-weight: 600; margin-bottom: 8px; }
+  
+  .contact-info {
+    font-size: 0.85em;
+    line-height: 1.8;
+    text-align: right;
+  }
+  
+  .contact-info a { color: #0066cc; text-decoration: none; }
+  
+  h2 {
+    font-size: 1.4em;
+    color: #0066cc;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 8px;
+  }
+  
+  .section { margin-bottom: 25px; }
+  
+  .job {
+    margin-bottom: 20px;
+    page-break-inside: avoid;
+  }
+  
+  .job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 5px;
+  }
+  
+  .job-title { font-weight: 700; font-size: 1.05em; }
+  .job-company { color: #0066cc; font-weight: 600; }
+  .job-dates { font-size: 0.9em; color: #666; }
+  
+  ul { margin-left: 20px; margin-bottom: 12px; }
+  li { margin-bottom: 6px; }
+  
+  .highlights {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin: 20px 0;
+  }
+  
+  .highlight-box {
+    background: #f9f9f9;
+    padding: 12px;
+    border-left: 3px solid #0066cc;
+    border-radius: 2px;
+  }
+  
+  .highlight-num { font-size: 1.3em; font-weight: 700; color: #0066cc; }
+  .highlight-desc { font-size: 0.9em; color: #666; margin-top: 3px; }
+  
+  .skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 15px;
+  }
+  
+  .skill-category h3 { font-size: 1em; color: #0066cc; margin-bottom: 10px; font-weight: 600; }
+  
+  .skill-list { list-style: none; }
+  .skill-list li { margin-bottom: 5px; padding-left: 15px; position: relative; }
+  .skill-list li:before { content: "•"; position: absolute; left: 0; color: #0066cc; }
+  
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+  }
+  
+  .tag {
+    background: #e8f4ff;
+    color: #0066cc;
+    padding: 4px 10px;
+    border-radius: 3px;
+    font-size: 0.85em;
+    font-weight: 500;
+  }
+  
+  strong { color: #000; }
+  
+  .summary { background: #f9f9f9; padding: 15px; border-radius: 4px; margin: 15px 0; line-height: 1.8; }
+  
+  @media print {
+    .container { box-shadow: none; }
+    body { background: white; padding: 0; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<header>
+  <div class="header-top">
+    <div>
+      <h1>Vikram R. Lokhande</h1>
+      <div class="title">Library & Solution Architect</div>
+      <p style="font-size: 0.95em; color: #666; margin-top: 5px;">Industrial Automation & Data Integration Engineer</p>
+    </div>
+    <div class="contact-info">
+      <p><strong>Email:</strong> vikramm45@gmail.com</p>
+      <p><strong>Phone:</strong> +91-9766171022</p>
+      <p><strong>Location:</strong> Pune, India</p>
+      <p><strong>LinkedIn:</strong> linkedin.com/in/vikram-lokhande</p>
+      <p><strong>GitHub:</strong> github.com/viklgithub</p>
+    </div>
+  </div>
+  <p style="font-size: 0.95em; line-height: 1.8; color: #555;">Architect and manager of six device libraries in the Device Object Library at Rockwell Automation. 12+ years designing device-to-HMI/SCADA data integration solutions. Expert in FactoryTalk Optix, Studio 5000, and PlantPAx. Actively exploring AI agents and LLM tooling for next-generation automation intelligence.</p>
+</header>
+
+<h2>Professional Summary</h2>
+<div class="summary">
+I architect device libraries and data-integrated HMI/SCADA solutions that bridge field devices and industrial software platforms. At Rockwell Automation, I lead six library domains (Power, IO, Safety, Network, IO-Link, Hardy), ship 30+ new device objects annually, and manage teams of 10+ engineers. Core expertise: device-to-HMI integration, release governance, DevOps pipelines, and solution architecture for industrial automation. Actively building AI agentic workflows and exploring LLM tooling to advance automation intelligence.
+</div>
+
+<h2>Key Highlights</h2>
+<div class="highlights">
+  <div class="highlight-box">
+    <div class="highlight-num">12+</div>
+    <div class="highlight-desc">Years in Industrial Automation</div>
+  </div>
+  <div class="highlight-box">
+    <div class="highlight-num">6</div>
+    <div class="highlight-desc">Device Libraries Managed</div>
+  </div>
+  <div class="highlight-box">
+    <div class="highlight-num">500+</div>
+    <div class="highlight-desc">Device Objects Shipped</div>
+  </div>
+  <div class="highlight-box">
+    <div class="highlight-num">10+</div>
+    <div class="highlight-desc">Engineers Led</div>
+  </div>
+  <div class="highlight-box">
+    <div class="highlight-num">40%</div>
+    <div class="highlight-desc">Manual Testing Effort Reduction</div>
+  </div>
+  <div class="highlight-box">
+    <div class="highlight-num">4</div>
+    <div class="highlight-desc">Internal Tools Built</div>
+  </div>
+</div>
+
+<h2>Professional Experience</h2>
+
+<div class="section">
+  <div class="job">
+    <div class="job-header">
+      <div>
+        <div class="job-title">Library & Solution Architect</div>
+        <div class="job-company">Rockwell Automation, Global Engineering Centre, Pune</div>
+      </div>
+      <div class="job-dates">March 2022 — Present</div>
+    </div>
+    
+    <p style="margin: 8px 0; font-weight: 600; color: #333;">Library Architecture & Management</p>
+    <ul>
+      <li>Architect and manage <strong>six device libraries</strong> in the Device Object Library — Power, IO, Safety, Network, IO-Link, and Hardy — setting standards used by customers and partners globally</li>
+      <li>Establish and maintain <strong>consistent library standards and practices</strong> across all six domains, including coding, testing, documentation, and release governance</li>
+      <li>Drive <strong>timely and quality releases</strong> by managing schedules, resolving blockers, and aligning cross-functional stakeholders</li>
+    </ul>
+    
+    <p style="margin: 8px 0; font-weight: 600; color: #333;">Data Integration & HMI/SCADA Development</p>
+    <ul>
+      <li>Architect end-to-end <strong>device-to-HMI data integration</strong> pipelines connecting power monitors, I/O modules, safety devices, IO-Link sensors to FactoryTalk Optix and FTView SE/ME</li>
+      <li>Pioneered <strong>PLC-independent PM5000 PQEM solution</strong> using Device API + Optix C# — achieving 100% standalone operation and 30% faster UI vs previous generation</li>
+      <li>Delivered <strong>30+ new device objects in FY2025</strong> including GuardLink 2.0, Stratix 4100, IO-Link 5034 Master with dual-IP mode, HI6501 and HI5069xWS Hardy devices</li>
+    </ul>
+    
+    <p style="margin: 8px 0; font-weight: 600; color: #333;">Team Leadership & DevOps</p>
+    <ul>
+      <li>Lead a <strong>team of 10+ developers</strong> — reviewing work, conducting syncs, unblocking delivery, and providing technical support on complex integration issues</li>
+      <li>Built automated <strong>DevOps pipelines reducing manual testing effort by 40%</strong> and centralized tooling platform cutting validation time by 50%</li>
+      <li>Recognized by Product Manager, Library Manager, and SVP LCS for innovation impact</li>
+    </ul>
+    
+    <div class="tags">
+      <span class="tag">FactoryTalk Optix</span>
+      <span class="tag">Studio 5000</span>
+      <span class="tag">C#</span>
+      <span class="tag">PlantPAx</span>
+      <span class="tag">Device API</span>
+      <span class="tag">OPC UA</span>
+      <span class="tag">CI/CD</span>
+      <span class="tag">DevOps</span>
+    </div>
+  </div>
+
+  <div class="job">
+    <div class="job-header">
+      <div>
+        <div class="job-title">Project Engineer</div>
+        <div class="job-company">Rockwell Automation, Global Engineering Centre, Pune</div>
+      </div>
+      <div class="job-dates">April 2018 — February 2022</div>
+    </div>
+    
+    <ul>
+      <li>Developed <strong>AOI (Add-On Instruction) code</strong>, ACM configurations, and faceplates for FTView SE, ME across Power, IO, Safety, IO-Link, Energy, and Network domains</li>
+      <li>Executed rigorous object testing, authored reference manuals, and produced how-to guides and instructional videos for developer and end-user audiences</li>
+      <li>Developed full <strong>Chemical Industry Demo using PlantPAx 5.0</strong> — Batch and Continuous Process — used as customer and partner showcase</li>
+    </ul>
+    
+    <div class="tags">
+      <span class="tag">AOI</span>
+      <span class="tag">ACM</span>
+      <span class="tag">FTView SE/ME</span>
+      <span class="tag">PlantPAx 5.0</span>
+    </div>
+  </div>
+
+  <div class="job">
+    <div class="job-header">
+      <div>
+        <div class="job-title">Project Engineer</div>
+        <div class="job-company">Rockwell Automation, Pune</div>
+      </div>
+      <div class="job-dates">November 2014 — April 2017</div>
+    </div>
+    
+    <ul>
+      <li>Designed and developed <strong>SCADA, HMI, and PLC solutions</strong> on FTView SE/ME, Wonderware InTouch, ControlLogix, RSLogix 5000</li>
+      <li>Executed platform migrations from <strong>Wonderware, Siemens, ABB, Citect Vijeo, GE Proficy</strong> to Allen-Bradley</li>
+      <li>Applied <strong>VB.NET, VBA scripting, and SQL</strong> to enhance application capabilities and automate report generation</li>
+    </ul>
+    
+    <div class="tags">
+      <span class="tag">FTView SE/ME</span>
+      <span class="tag">VB.NET</span>
+      <span class="tag">SQL</span>
+    </div>
+  </div>
+</div>
+
+<h2>Key Projects</h2>
+
+<div class="section">
+  <div class="job">
+    <div class="job-title">Device Object Library Suite</div>
+    <div class="job-company">Rockwell Automation — Core Product Suite</div>
+    <p style="margin-top: 8px; font-size: 0.95em; line-height: 1.7;">Six comprehensive device libraries serving as foundation for industrial automation solutions worldwide. <strong>Library Domains:</strong> Power Device Library (E300™, ArmorStart®, SMC™-50, PowerFlex®, Kinetix®, PowerMonitor™) | IO Device Library (1715, 1719, 1732E, 1734, 1738, 1756, 1769, 1794, 5015, 5069, 5094) | Network Device Library (Stratix® Managed Switches, DLR Networks) | Safety Device Library (GuardLink 2.0, DCAF) | IO-Link Device Library (Masters, Sensors, 5034 Dual-IP) | Hardy Device Library (HI6501, HI5069xWS). Each library integrated with FactoryTalk Optix, FTView SE/ME, Studio 5000, and PlantPAx with production-ready code and OnCourse training resources.</p>
+    <div class="tags">
+      <span class="tag">Studio 5000</span>
+      <span class="tag">FactoryTalk Optix</span>
+      <span class="tag">Device API</span>
+      <span class="tag">PlantPAx</span>
+    </div>
+  </div>
+
+  <div class="job">
+    <div class="job-title">PowerMonitor 5000 PQEM Solution</div>
+    <div class="job-company">Rockwell Automation — Flagship Innovation</div>
+    <p style="margin-top: 8px; font-size: 0.95em;">Redesigned power quality & energy monitoring faceplate for FactoryTalk Optix. Integrates real-time data directly from PM5000 power monitors using Rockwell Device API and Optix C# scripting — bypassing PLC entirely. Delivers live dashboards for voltage, current, harmonics, power quality events with 30% faster UI. First solution achieving full PLC-independent operation. Recognized by SVP LCS.</p>
+    <div class="tags">
+      <span class="tag">FactoryTalk Optix</span>
+      <span class="tag">C#</span>
+      <span class="tag">Device API</span>
+    </div>
+  </div>
+
+  <div class="job">
+    <div class="job-title">Rockwell Automation Fair — Annual Global Representation</div>  
+    <div class="job-company">2022: Chicago | 2023: Boston | 2024: Anaheim | 2025: Chicago</div>
+    <p style="margin-top: 8px; font-size: 0.95em;">Annual 5-day expo representing Device Object Library at Rockwell Automation Fair. Roles: Booth Lead, Live Hands-On Trainer, Session Presenter, Technical Expert. Showcase Application Code Libraries, conduct live training sessions, deliver interactive presentations to engineers, partners, and customers globally.</p>
+  </div>
+</div>
+
+<h2>Technical Skills</h2>
+
+<div class="skills-grid">
+  <div class="skill-category">
+    <h3>Automation Platforms</h3>
+    <ul class="skill-list">
+      <li>FactoryTalk Optix (Expert)</li>
+      <li>Studio 5000 / ControlLogix (Expert)</li>
+      <li>PlantPAx / ACM (Advanced)</li>
+      <li>FTView SE / ME (Advanced)</li>
+      <li>Wonderware InTouch (Proficient)</li>
+      <li>ABB 800xA / Compact HMI (Proficient)</li>
+    </ul>
+  </div>
+
+  <div class="skill-category">
+    <h3>Programming & Scripting</h3>
+    <ul class="skill-list">
+      <li>C# / .NET (Expert)</li>
+      <li>Python (Advanced)</li>
+      <li>VB.NET / VBA (Expert)</li>
+      <li>JavaScript / HTML (Advanced)</li>
+      <li>SQL / SQLite (Proficient)</li>
+      <li>React (Intermediate)</li>
+    </ul>
+  </div>
+
+  <div class="skill-category">
+    <h3>Architecture & Integration</h3>
+    <ul class="skill-list">
+      <li>Solution Architecture (Expert)</li>
+      <li>Device→HMI Data Integration (Expert)</li>
+      <li>Device API / OPC UA (Expert)</li>
+      <li>CI/CD Pipeline Design (Advanced)</li>
+      <li>Test Automation (Advanced)</li>
+      <li>Release Governance (Advanced)</li>
+    </ul>
+  </div>
+
+  <div class="skill-category">
+    <h3>Leadership & Emerging Tech</h3>
+    <ul class="skill-list">
+      <li>Team Leadership (10+ developers)</li>
+      <li>Technical Mentoring (Advanced)</li>
+      <li>LLM APIs & Agentic Workflows (Intermediate)</li>
+      <li>IoT / Industry 4.0 (Proficient)</li>
+      <li>Stakeholder Management (Expert)</li>
+    </ul>
+  </div>
+</div>
+
+<h2>Education & Certifications</h2>
+
+<div class="section">
+  <div class="job">
+    <div class="job-title">ThingWorx IoT Developer Specialization</div>
+    <div class="job-company">PTC — Official Certification</div>
+    <div class="job-dates">April 2020</div>
+  </div>
+
+  <div class="job">
+    <div class="job-title">B.E. Electronics & Telecommunication</div>
+    <div class="job-company">P.V.P.I.T. Budhgaon, Shivaji University</div>
+    <div class="job-dates">2008–2012 | 65.00%</div>
+  </div>
+
+  <div class="job">
+    <div class="job-title">Process Field Instruments Training</div>
+    <div class="job-company">Siemens, Mumbai — 3-Day Official Training</div>
+  </div>
+
+  <div class="job">
+    <div class="job-title">ABB Compact HMI 5.1 Training</div>
+    <div class="job-company">ABB, Bangalore — 2-Day Official Training</div>
+  </div>
+</div>
+
+</div>
+
+<script>
+  // Auto-open print dialog when page loads (remove if not desired)
+  // window.print();
+</script>
+
+</body>
+</html>

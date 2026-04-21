@@ -29,7 +29,11 @@
   .grid-bg{position:fixed;inset:0;z-index:0;pointer-events:none;background-image:linear-gradient(rgba(0,180,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,180,255,0.03) 1px,transparent 1px);background-size:60px 60px}
   .grid-fade{position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(ellipse at 50% 0%,rgba(0,100,200,0.08) 0%,transparent 70%)}
   section{position:relative;z-index:1}
-  #hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:8rem 4rem 6rem;max-width:1100px;margin:0 auto}
+  #hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:8rem 4rem 6rem;max-width:1100px;margin:0 auto;position:relative}
+  .hero-content{display:flex;flex-direction:column}
+  .hero-profile{position:absolute;top:8rem;right:4rem;}
+  .profile-image{width:220px;height:220px;border-radius:8px;object-fit:cover;border:2px solid var(--border-bright);box-shadow:0 20px 60px rgba(0,180,255,0.15);transition:transform 0.3s ease,box-shadow 0.3s ease}
+  .profile-image:hover{transform:translateY(-8px);box-shadow:0 30px 80px rgba(0,180,255,0.25)}
   .hero-eyebrow{font-family:var(--font-mono);font-size:0.78rem;letter-spacing:0.2em;color:var(--accent);text-transform:uppercase;margin-bottom:1.5rem;opacity:0;animation:fadeUp 0.6s 0.2s forwards}
   .hero-eyebrow::before{content:'// ';opacity:0.5}
   .hero-name{font-family:var(--font-display);font-size:clamp(3.5rem,8vw,7rem);font-weight:800;line-height:0.95;letter-spacing:-0.01em;color:#fff;margin-bottom:0.5rem;opacity:0;animation:fadeUp 0.6s 0.35s forwards}
@@ -134,7 +138,7 @@
   .reveal.visible{opacity:1;transform:translateY(0)}
   @media(max-width:900px){
     nav{padding:0 1.5rem}.nav-links{display:none}
-    #hero{padding:7rem 1.5rem 4rem}.section-inner{padding:4rem 1.5rem}
+    #hero{padding:7rem 1.5rem 4rem}.hero-profile{top:1.5rem;right:1.5rem}.profile-image{width:160px;height:160px}.section-inner{padding:4rem 1.5rem}
     .about-grid,.cert-edu-grid{grid-template-columns:1fr;gap:2.5rem}
     .hero-stats{gap:1.5rem}.project-card.featured{grid-template-columns:1fr;gap:2rem}
     .tools-grid{grid-template-columns:1fr}
@@ -146,7 +150,7 @@
 <div class="grid-fade"></div>
 
 <nav>
-  <a href="#hero" class="nav-logo">Vikram - Portfolio</a>
+  <a href="#hero" class="nav-logo">Vikram - Library & Solution Architect</a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#experience">Experience</a></li>
@@ -158,24 +162,29 @@
 </nav>
 
 <section id="hero">
-  <div class="hero-eyebrow">Library &amp; Solution Architect · Rockwell Automation · Pune, India</div>
-  <h1 class="hero-name">Vikram R.<br/>Lokhande</h1>
-  <div class="hero-title">Industrial Automation &amp; Data Integration Engineer</div>
-  <p class="hero-desc">
-    I architect <strong>device libraries and data-integrated HMI/SCADA solutions</strong> that bridge field devices and industrial software platforms. 12+ years at Rockwell Automation managing Device Object Library releases, building DevOps pipelines, and leading cross-functional teams — while actively exploring <strong>AI agents and LLM tooling</strong> to push automation intelligence forward.
-  </p>
-  <div class="hero-cta">
-    <a href="#projects" class="btn btn-primary">View Projects</a>
-    <a href="#experience" class="btn btn-outline">Experience</a>
-    <a href="#contact" class="btn btn-outline">Contact Me</a>
-    <a href="./assets/resume.pdf" class="btn btn-outline" download>Download CV</a>
+  <div class="hero-profile">
+    <img src="./assets/profile.jpeg" alt="Vikram R. Lokhande" class="profile-image">
   </div>
-  <div class="hero-stats">
-    <div><div class="stat-num">12+</div><div class="stat-label">Years Experience</div></div>
-    <div><div class="stat-num">6</div><div class="stat-label">Libraries Managed</div></div>
-    <div><div class="stat-num">500+</div><div class="stat-label">Device Objects Shipped</div></div>
-    <div><div class="stat-num">10+</div><div class="stat-label">Engineers Led</div></div>
-    <div><div class="stat-num">4</div><div class="stat-label">Internal Tools Built</div></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Library &amp; Solution Architect · Rockwell Automation · Pune, India</div>
+    <h1 class="hero-name">Vikram R.<br/>Lokhande</h1>
+    <div class="hero-title">Industrial Automation &amp; Data Integration Engineer</div>
+    <p class="hero-desc">
+      I architect <strong>device libraries and data-integrated HMI/SCADA solutions</strong> that bridge field devices and industrial software platforms. 12+ years at Rockwell Automation managing Device Object Library releases, building DevOps pipelines, and leading cross-functional teams — while actively exploring <strong>AI agents and LLM tooling</strong> to push automation intelligence forward.
+    </p>
+    <div class="hero-cta">
+      <a href="#projects" class="btn btn-primary">View Projects</a>
+      <a href="#experience" class="btn btn-outline">Experience</a>
+      <a href="#contact" class="btn btn-outline">Contact Me</a>
+      <a href="./assets/resume.pdf" class="btn btn-outline" download>Download CV</a>
+    </div>
+    <div class="hero-stats">
+      <div><div class="stat-num">12+</div><div class="stat-label">Years Experience</div></div>
+      <div><div class="stat-num">6</div><div class="stat-label">Libraries Managed</div></div>
+      <div><div class="stat-num">500+</div><div class="stat-label">Device Objects Shipped</div></div>
+      <div><div class="stat-num">10+</div><div class="stat-label">Engineers Led</div></div>
+      <div><div class="stat-num">4</div><div class="stat-label">Internal Tools Built</div></div>
+    </div>
   </div>
 </section>
 
@@ -595,11 +604,15 @@
           <svg viewBox="0 0 24 24"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 010 19.366V5.457c0-.9.732-1.636 1.636-1.636h.819L12 10.91l9.545-7.09h.819c.904 0 1.636.732 1.636 1.636z"/></svg>
           vikramm45@gmail.com
         </a>
+        <a href="tel:+919766171022" class="contact-link">
+          <svg viewBox="0 0 24 24"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/></svg>
+          +91-9766171022
+        </a>
         <a href="https://github.com/viklgithub" class="contact-link" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
           GitHub
         </a>
-        <a href="./assets/resume.pdf" class="contact-link" download>
+        <a href="./assets/Vikram R. Lokhande — Portfolio.pdf" class="contact-link" download>
           <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
           Download CV
         </a>
