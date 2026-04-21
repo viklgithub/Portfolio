@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Vikram R. Lokhande — Library & Solution Architect</title>
+<meta name="description" content="Portfolio of Vikram R. Lokhande — Library & Solution Architect at Rockwell Automation, Pune. 12+ years in industrial automation, SCADA, HMI, FactoryTalk Optix."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --bg: #050d1a;
+    --bg2: #0a1628;
+    --bg3: #0f1f3d;
+    --card: #0c1830;
+    --card-hover: #112040;
+    --border: rgba(0,180,255,0.12);
+    --border-bright: rgba(0,180,255,0.35);
+    --accent: #00b4ff;
+    --accent2: #0077cc;
+    --amber: #f5a623;
+    --green: #22d36e;
+    --text: #d4e4f7;
+    --text-muted: #6a8aaa;
+    --text-dim: #3a5a7a;
+    --font-display: 'Barlow Condensed', sans-serif;
+    --font-body: 'Barlow', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 4rem;
+    height: 64px;
+    background: rgba(5,13,26,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo {
+    font-family: var(--font-display); font-size: 1.2rem; font-weight: 700;
+    color: var(--accent); letter-spacing: 0.08em; text-decoration: none;
+  }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a {
+    font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.12em;
+    color: var(--text-muted); text-decoration: none; text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--accent); }
+
+  /* ── GRID BACKGROUND ── */
+  .grid-bg {
+    position: fixed; inset: 0; z-index: 0; pointer-events: none;
+    background-image:
+      linear-gradient(rgba(0,180,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,180,255,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .grid-fade {
+    position: fixed; inset: 0; z-index: 0; pointer-events: none;
+    background: radial-gradient(ellipse at 50% 0%, rgba(0,100,200,0.08) 0%, transparent 70%);
+  }
+
+  /* ── SECTIONS ── */
+  section { position: relative; z-index: 1; }
+
+  /* ── HERO ── */
+  #hero {
+    min-height: 100vh;
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 8rem 4rem 6rem;
+    max-width: 1100px; margin: 0 auto;
+  }
+  .hero-eyebrow {
+    font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.2em;
+    color: var(--accent); text-transform: uppercase; margin-bottom: 1.5rem;
+    opacity: 0; animation: fadeUp 0.6s 0.2s forwards;
+  }
+  .hero-eyebrow::before { content: '// '; opacity: 0.5; }
+  .hero-name {
+    font-family: var(--font-display); font-size: clamp(3.5rem, 8vw, 7rem);
+    font-weight: 800; line-height: 0.95; letter-spacing: -0.01em;
+    color: #fff; margin-bottom: 0.5rem;
+    opacity: 0; animation: fadeUp 0.6s 0.35s forwards;
+  }
+  .hero-title {
+    font-family: var(--font-display); font-size: clamp(1.5rem, 3.5vw, 2.6rem);
+    font-weight: 400; letter-spacing: 0.06em;
+    color: var(--accent); margin-bottom: 2rem;
+    opacity: 0; animation: fadeUp 0.6s 0.5s forwards;
+  }
+  .hero-desc {
+    max-width: 620px; font-size: 1.05rem; color: var(--text-muted);
+    line-height: 1.8; margin-bottom: 3rem;
+    opacity: 0; animation: fadeUp 0.6s 0.65s forwards;
+  }
+  .hero-desc strong { color: var(--text); font-weight: 500; }
+  .hero-cta {
+    display: flex; gap: 1rem; flex-wrap: wrap;
+    opacity: 0; animation: fadeUp 0.6s 0.8s forwards;
+  }
+  .btn {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    padding: 0.75rem 1.75rem; border-radius: 4px;
+    font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.1em;
+    text-transform: uppercase; text-decoration: none; cursor: pointer;
+    transition: all 0.2s; font-weight: 500;
+  }
+  .btn-primary {
+    background: var(--accent); color: var(--bg);
+    border: 1px solid var(--accent);
+  }
+  .btn-primary:hover { background: #33c6ff; border-color: #33c6ff; transform: translateY(-2px); }
+  .btn-outline {
+    background: transparent; color: var(--text);
+    border: 1px solid var(--border-bright);
+  }
+  .btn-outline:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+
+  .hero-stats {
+    display: flex; gap: 3rem; margin-top: 5rem;
+    opacity: 0; animation: fadeUp 0.6s 1s forwards;
+    padding-top: 2.5rem; border-top: 1px solid var(--border);
+  }
+  .stat-num {
+    font-family: var(--font-display); font-size: 2.8rem; font-weight: 800;
+    color: var(--accent); line-height: 1;
+  }
+  .stat-label {
+    font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.1em;
+    color: var(--text-muted); text-transform: uppercase; margin-top: 0.25rem;
+  }
+
+  /* ── SECTION COMMON ── */
+  .section-inner { max-width: 1100px; margin: 0 auto; padding: 6rem 4rem; }
+  .section-tag {
+    font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.2em;
+    color: var(--accent); text-transform: uppercase; margin-bottom: 0.75rem;
+  }
+  .section-tag::before { content: '// '; opacity: 0.5; }
+  .section-title {
+    font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 700; letter-spacing: 0.02em; color: #fff;
+    margin-bottom: 3.5rem; line-height: 1;
+  }
+  .divider { width: 60px; height: 2px; background: var(--accent); margin-bottom: 3rem; }
+
+  /* ── ABOUT ── */
+  #about { border-top: 1px solid var(--border); }
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+  .about-text p { color: var(--text-muted); margin-bottom: 1.25rem; font-size: 1.02rem; }
+  .about-text p strong { color: var(--accent); font-weight: 500; }
+  .about-highlights { display: flex; flex-direction: column; gap: 1rem; }
+  .highlight-card {
+    background: var(--card); border: 1px solid var(--border);
+    border-left: 3px solid var(--accent); padding: 1.25rem 1.5rem;
+    border-radius: 4px; transition: all 0.25s;
+  }
+  .highlight-card:hover { border-color: var(--border-bright); background: var(--card-hover); transform: translateX(4px); }
+  .highlight-num {
+    font-family: var(--font-display); font-size: 2rem; font-weight: 800;
+    color: var(--accent); line-height: 1;
+  }
+  .highlight-desc { font-size: 0.88rem; color: var(--text-muted); margin-top: 0.2rem; }
+
+  /* ── EXPERIENCE TIMELINE ── */
+  #experience { border-top: 1px solid var(--border); }
+  .timeline { position: relative; padding-left: 2rem; }
+  .timeline::before {
+    content: ''; position: absolute; left: 0; top: 8px; bottom: 0;
+    width: 1px; background: var(--border-bright);
+  }
+  .tl-item {
+    position: relative; margin-bottom: 2.5rem;
+    padding-left: 2rem; padding-bottom: 2.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .tl-item:last-child { border-bottom: none; margin-bottom: 0; }
+  .tl-dot {
+    position: absolute; left: -2.5rem; top: 6px;
+    width: 10px; height: 10px; border-radius: 50%;
+    background: var(--accent); border: 2px solid var(--bg);
+    box-shadow: 0 0 0 4px rgba(0,180,255,0.15);
+  }
+  .tl-dot.current { background: var(--amber); box-shadow: 0 0 0 4px rgba(245,166,35,0.15); }
+  .tl-date {
+    font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.12em;
+    color: var(--text-dim); text-transform: uppercase; margin-bottom: 0.5rem;
+  }
+  .tl-role {
+    font-family: var(--font-display); font-size: 1.5rem; font-weight: 700;
+    color: #fff; letter-spacing: 0.03em; line-height: 1.1;
+  }
+  .tl-company {
+    font-size: 0.9rem; color: var(--accent); margin: 0.3rem 0 1rem;
+    font-weight: 500;
+  }
+  .tl-bullets { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+  .tl-bullets li {
+    font-size: 0.93rem; color: var(--text-muted); padding-left: 1.2rem;
+    position: relative;
+  }
+  .tl-bullets li::before {
+    content: '›'; position: absolute; left: 0;
+    color: var(--accent); font-size: 1rem;
+  }
+  .tl-bullets li strong { color: var(--text); font-weight: 500; }
+  .tl-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.25rem; }
+  .tag {
+    font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.08em;
+    padding: 0.3rem 0.7rem; border-radius: 3px;
+    background: rgba(0,180,255,0.07); color: var(--text-muted);
+    border: 1px solid var(--border); text-transform: uppercase;
+  }
+
+  /* ── PROJECTS ── */
+  #projects { border-top: 1px solid var(--border); }
+  .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px,1fr)); gap: 1.5rem; }
+  .project-card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 6px; padding: 2rem; position: relative; overflow: hidden;
+    transition: all 0.3s; display: flex; flex-direction: column; gap: 1rem;
+  }
+  .project-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, var(--accent), transparent);
+    opacity: 0; transition: opacity 0.3s;
+  }
+  .project-card:hover { border-color: var(--border-bright); background: var(--card-hover); transform: translateY(-4px); }
+  .project-card:hover::before { opacity: 1; }
+  .project-card.featured { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+  .project-badge {
+    font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.15em;
+    padding: 0.25rem 0.6rem; border-radius: 3px; text-transform: uppercase;
+    background: rgba(245,166,35,0.1); color: var(--amber); border: 1px solid rgba(245,166,35,0.25);
+    width: fit-content;
+  }
+  .project-title {
+    font-family: var(--font-display); font-size: 1.5rem; font-weight: 700;
+    color: #fff; letter-spacing: 0.02em; line-height: 1.1;
+  }
+  .project-desc { font-size: 0.92rem; color: var(--text-muted); line-height: 1.75; }
+  .project-metrics { display: flex; flex-direction: column; gap: 0.75rem; }
+  .metric { display: flex; align-items: baseline; gap: 0.5rem; }
+  .metric-val {
+    font-family: var(--font-display); font-size: 1.8rem; font-weight: 800;
+    color: var(--accent); line-height: 1;
+  }
+  .metric-label { font-size: 0.82rem; color: var(--text-muted); }
+
+  /* ── SKILLS ── */
+  #skills { border-top: 1px solid var(--border); }
+  .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
+  .skill-group {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 6px; padding: 1.75rem;
+    transition: border-color 0.25s;
+  }
+  .skill-group:hover { border-color: var(--border-bright); }
+  .skill-group-title {
+    font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.15em;
+    color: var(--accent); text-transform: uppercase; margin-bottom: 1.25rem;
+    padding-bottom: 0.75rem; border-bottom: 1px solid var(--border);
+  }
+  .skill-list { display: flex; flex-direction: column; gap: 0.6rem; }
+  .skill-item { display: flex; align-items: center; justify-content: space-between; }
+  .skill-name { font-size: 0.9rem; color: var(--text-muted); }
+  .skill-bar { width: 80px; height: 3px; background: var(--bg3); border-radius: 2px; overflow: hidden; }
+  .skill-fill { height: 100%; background: var(--accent); border-radius: 2px; }
+
+  /* ── CONTACT ── */
+  #contact { border-top: 1px solid var(--border); }
+  .contact-inner {
+    max-width: 700px;
+    text-align: center; margin: 0 auto;
+  }
+  .contact-sub { color: var(--text-muted); font-size: 1rem; margin-bottom: 3rem; max-width: 480px; margin-left: auto; margin-right: auto; }
+  .contact-links { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+  .contact-link {
+    display: flex; align-items: center; gap: 0.6rem;
+    padding: 0.9rem 1.75rem; border: 1px solid var(--border-bright);
+    border-radius: 4px; text-decoration: none; color: var(--text);
+    font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.1em;
+    text-transform: uppercase; transition: all 0.2s; background: var(--card);
+  }
+  .contact-link:hover { border-color: var(--accent); color: var(--accent); background: var(--card-hover); transform: translateY(-2px); }
+  .contact-link svg { width: 16px; height: 16px; fill: currentColor; flex-shrink: 0; }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid var(--border); text-align: center;
+    padding: 2rem; position: relative; z-index: 1;
+    font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.1em;
+    color: var(--text-dim);
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .reveal {
+    opacity: 0; transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    nav { padding: 0 1.5rem; }
+    .nav-links { display: none; }
+    #hero { padding: 7rem 1.5rem 4rem; }
+    .section-inner { padding: 4rem 1.5rem; }
+    .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .hero-stats { gap: 1.5rem; }
+    .project-card.featured { grid-template-columns: 1fr; gap: 2rem; }
+    .contact-links { flex-direction: column; align-items: center; }
+  }
+</style>
+</head>
+<body>
+
+<div class="grid-bg"></div>
+<div class="grid-fade"></div>
+
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="nav-logo">VRL</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-eyebrow">Library &amp; Solution Architect · Rockwell Automation · Pune, India</div>
+  <h1 class="hero-name">Vikram R.<br/>Lokhande</h1>
+  <div class="hero-title">Industrial Automation Engineer</div>
+  <p class="hero-desc">
+    I architect <strong>device libraries and real-time HMI solutions</strong> that power industrial plants across the globe.
+    12+ years designing scalable FactoryTalk Optix faceplates, PlantPAx systems, and DevOps pipelines that
+    <strong>cut testing effort by 40%</strong> — from Pune to Sri Lanka to Uganda.
+  </p>
+  <div class="hero-cta">
+    <a href="#projects" class="btn btn-primary">View Projects</a>
+    <a href="#contact" class="btn btn-outline">Get In Touch</a>
+    <a href="./assets/resume.pdf" class="btn btn-outline" download>Download CV</a>
+  </div>
+  <div class="hero-stats">
+    <div>
+      <div class="stat-num">12+</div>
+      <div class="stat-label">Years Experience</div>
+    </div>
+    <div>
+      <div class="stat-num">6</div>
+      <div class="stat-label">Device Libraries Led</div>
+    </div>
+    <div>
+      <div class="stat-num">30+</div>
+      <div class="stat-label">Device Objects Shipped</div>
+    </div>
+    <div>
+      <div class="stat-num">10+</div>
+      <div class="stat-label">Engineers Mentored</div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <div class="section-tag">About Me</div>
+    <div class="section-title">Engineer. Architect.<br/>Problem Solver.</div>
+    <div class="about-grid reveal">
+      <div class="about-text">
+        <p>
+          I'm a <strong>Library &amp; Solution Architect</strong> at Rockwell Automation, where I lead the development and release of six device libraries within the Device Object Library (DOL) ecosystem — trusted by industrial customers worldwide.
+        </p>
+        <p>
+          My work bridges the gap between <strong>control systems engineering and modern software development</strong>. I don't just write HMI code — I design the architecture that hundreds of engineers build on, create the DevOps tooling that validates it, and present innovations to senior leadership and India's tech community.
+        </p>
+        <p>
+          Beyond automation, I'm passionate about <strong>algorithmic trading</strong>, building React-based tools for prop firm analysis, Pine Script strategies for XAUUSD, and exploring agentic AI workflows. I believe the best engineers build across domains.
+        </p>
+        <p>
+          Based in <strong>Pune, Maharashtra</strong>. Fluent in Marathi, Hindi, and English. Available for senior architecture, technical leadership, and consulting opportunities.
+        </p>
+      </div>
+      <div class="about-highlights">
+        <div class="highlight-card">
+          <div class="highlight-num">40%</div>
+          <div class="highlight-desc">Reduction in manual testing effort via automated DevOps pipelines</div>
+        </div>
+        <div class="highlight-card">
+          <div class="highlight-num">50%</div>
+          <div class="highlight-desc">Faster validation time through centralized tooling platform</div>
+        </div>
+        <div class="highlight-card">
+          <div class="highlight-num">30%</div>
+          <div class="highlight-desc">UI performance improvement in PM5000 PQEM over previous generation</div>
+        </div>
+        <div class="highlight-card">
+          <div class="highlight-num">100%</div>
+          <div class="highlight-desc">PLC-independent operation achieved in flagship PM5000 Device API solution</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-inner">
+    <div class="section-tag">Career Timeline</div>
+    <div class="section-title">Experience</div>
+    <div class="timeline">
+
+      <div class="tl-item reveal">
+        <div class="tl-dot current"></div>
+        <div class="tl-date">Mar 2022 — Present</div>
+        <div class="tl-role">Library &amp; Solution Architect</div>
+        <div class="tl-company">Rockwell Automation · Pune, India</div>
+        <ul class="tl-bullets">
+          <li>Architect and manage <strong>six device libraries</strong> within the Device Object Library (DOL), leading a team of 10+ developers</li>
+          <li>Pioneered a <strong>PLC-independent PM5000 PQEM solution</strong> using Device API + Optix C# — 30% faster UI, fully standalone operation</li>
+          <li>Delivered <strong>30+ new device objects</strong> across Power, IO, Safety, Network, IO-Link, and Hardy libraries in FY2025 alone</li>
+          <li>Built automated DevOps pipelines that <strong>reduced manual testing effort by 40%</strong></li>
+          <li>Initiated centralized validation tooling platform cutting validation time by <strong>50%</strong></li>
+          <li>Recognized by Product Manager, Library Manager, and <strong>SVP LCS</strong> for innovation impact</li>
+          <li>Presented PM5000 PQEM to <strong>India Tech Community</strong> and GEBS leadership forums</li>
+        </ul>
+        <div class="tl-tags">
+          <span class="tag">Studio 5000</span><span class="tag">FactoryTalk Optix</span><span class="tag">C#</span>
+          <span class="tag">PlantPAx</span><span class="tag">ControlLogix</span><span class="tag">DevOps</span>
+          <span class="tag">CI/CD</span><span class="tag">SQLite</span><span class="tag">JavaScript</span>
+        </div>
+      </div>
+
+      <div class="tl-item reveal">
+        <div class="tl-dot"></div>
+        <div class="tl-date">Apr 2018 — Mar 2022</div>
+        <div class="tl-role">Project Engineer</div>
+        <div class="tl-company">Rockwell Automation · Pune, India</div>
+        <ul class="tl-bullets">
+          <li>Developed <strong>AOI code, ACM configurations, and faceplates</strong> for FactoryTalk View SE/ME</li>
+          <li>Delivered a full <strong>Chemical Industry Demo</strong> leveraging PlantPAx 5.0</li>
+          <li>Authored technical reference manuals and created developer instructional video guides</li>
+          <li>Defined development standards that improved cross-team quality and consistency</li>
+        </ul>
+        <div class="tl-tags">
+          <span class="tag">AOI</span><span class="tag">ACM</span><span class="tag">FTView SE/ME</span>
+          <span class="tag">PlantPAx 5.0</span><span class="tag">Library Dev</span>
+        </div>
+      </div>
+
+      <div class="tl-item reveal">
+        <div class="tl-dot"></div>
+        <div class="tl-date">Apr 2017 — Apr 2018</div>
+        <div class="tl-role">Consultant</div>
+        <div class="tl-company">Capgemini · Pune, India</div>
+        <ul class="tl-bullets">
+          <li>Led testing for Rockwell Automation products — manual, regression, and <strong>Python-automated</strong> frameworks</li>
+          <li>Conducted firmware testing and delivered POCs with cross-functional product teams</li>
+        </ul>
+        <div class="tl-tags">
+          <span class="tag">Python</span><span class="tag">Test Automation</span><span class="tag">Firmware</span>
+        </div>
+      </div>
+
+      <div class="tl-item reveal">
+        <div class="tl-dot"></div>
+        <div class="tl-date">Nov 2014 — Apr 2017</div>
+        <div class="tl-role">Project Engineer</div>
+        <div class="tl-company">Rockwell Automation · Pune, India</div>
+        <ul class="tl-bullets">
+          <li>Specialised in <strong>SCADA, HMI, and PLC development</strong> for industrial customers across India</li>
+          <li>Migrated third-party control systems to Allen-Bradley platforms</li>
+          <li>Managed <strong>FAT/SAT, installation, and commissioning</strong> of industrial control systems</li>
+        </ul>
+        <div class="tl-tags">
+          <span class="tag">SCADA</span><span class="tag">HMI</span><span class="tag">Studio 5000</span>
+          <span class="tag">Wonderware</span><span class="tag">ABB 800xA</span>
+        </div>
+      </div>
+
+      <div class="tl-item reveal">
+        <div class="tl-dot"></div>
+        <div class="tl-date">Nov 2012 — Nov 2014</div>
+        <div class="tl-role">Project Engineer</div>
+        <div class="tl-company">CIC Engineers · Pune, India</div>
+        <ul class="tl-bullets">
+          <li>Installed and commissioned <strong>ABB DCS systems</strong> for Ethanol and Sugar industries</li>
+          <li>Calibrated Siemens field instruments; tested and commissioned PLC control panels</li>
+          <li>Delivered projects internationally in <strong>Sri Lanka and Uganda</strong></li>
+        </ul>
+        <div class="tl-tags">
+          <span class="tag">ABB 800xA</span><span class="tag">Siemens DCS</span><span class="tag">Field Instruments</span>
+          <span class="tag">Calibration</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-inner">
+    <div class="section-tag">Selected Work</div>
+    <div class="section-title">Key Projects</div>
+    <div class="projects-grid">
+
+      <!-- FEATURED -->
+      <div class="project-card featured reveal">
+        <div>
+          <div class="project-badge">★ Flagship Innovation</div>
+          <div class="project-title" style="margin-top:1rem;">PowerMonitor 5000<br/>PQEM Solution</div>
+          <p class="project-desc" style="margin-top:1rem;">
+            A ground-up redesign of power quality &amp; energy monitoring faceplate for FactoryTalk Optix. Operates 100% independently of PLC runtime using Device API and Optix C# scripting — a first in the Rockwell ecosystem. Real-time dashboards for voltage, current, harmonics, and power quality events.
+          </p>
+          <div class="tl-tags" style="margin-top:1.25rem;">
+            <span class="tag">FactoryTalk Optix</span><span class="tag">C#</span><span class="tag">Device API</span>
+            <span class="tag">ControlLogix</span><span class="tag">SQLite</span><span class="tag">JavaScript</span>
+          </div>
+        </div>
+        <div class="project-metrics">
+          <div class="metric"><span class="metric-val">100%</span><span class="metric-label">PLC-independent operation</span></div>
+          <div class="metric"><span class="metric-val">30%</span><span class="metric-label">Faster UI than previous gen</span></div>
+          <div class="metric"><span class="metric-val">SVP</span><span class="metric-label">Recognition from SVP LCS</span></div>
+          <div class="metric"><span class="metric-val">2</span><span class="metric-label">Major conferences presented at</span></div>
+        </div>
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="project-card reveal">
+        <div class="project-badge">FY2025 Release</div>
+        <div class="project-title">Device Object Library Suite</div>
+        <p class="project-desc">
+          Architected and delivered 30+ new device objects across six library domains: Power, IO, Safety, Network, IO-Link, and Hardy — including GuardLink 2.0, Stratix 4100, IO-Link 5034 Master, and dual-IP mode support.
+        </p>
+        <div class="tl-tags">
+          <span class="tag">Studio 5000</span><span class="tag">PlantPAx</span>
+          <span class="tag">Safety</span><span class="tag">IO-Link</span>
+        </div>
+      </div>
+
+      <!-- CARD 3 -->
+      <div class="project-card reveal">
+        <div class="project-badge">DevOps Tooling</div>
+        <div class="project-title">Automated Validation Platform</div>
+        <p class="project-desc">
+          Designed and built a centralized automated testing and validation platform for device library QA, cutting manual testing effort by 40% and validation cycle time by 50% across the DOL team.
+        </p>
+        <div class="tl-tags">
+          <span class="tag">CI/CD</span><span class="tag">Python</span>
+          <span class="tag">DevOps</span><span class="tag">Test Automation</span>
+        </div>
+      </div>
+
+      <!-- CARD 4 -->
+      <div class="project-card reveal">
+        <div class="project-badge">Side Project</div>
+        <div class="project-title">Prop Firm Trading Toolkit</div>
+        <p class="project-desc">
+          React-based suite of tools for algorithmic traders: multi-language consistency calculator, rule breach analyzer, and a Python agentic research tool encoding prop firm constraints — targeting XAUUSD on MT5.
+        </p>
+        <div class="tl-tags">
+          <span class="tag">React</span><span class="tag">Python</span>
+          <span class="tag">Pine Script</span><span class="tag">MT5 API</span>
+        </div>
+      </div>
+
+      <!-- CARD 5 -->
+      <div class="project-card reveal">
+        <div class="project-badge">Migration Project</div>
+        <div class="project-title">Legacy SCADA Migration</div>
+        <p class="project-desc">
+          Led migration of third-party Wonderware and ABB control systems to Allen-Bradley/Rockwell platforms for multiple Indian industrial customers, including full FAT/SAT, commissioning, and documentation.
+        </p>
+        <div class="tl-tags">
+          <span class="tag">Wonderware</span><span class="tag">ABB 800xA</span>
+          <span class="tag">Studio 5000</span><span class="tag">ControlLogix</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-inner">
+    <div class="section-tag">Technical Proficiency</div>
+    <div class="section-title">Skills</div>
+    <div class="skills-grid reveal">
+
+      <div class="skill-group">
+        <div class="skill-group-title">Automation Platforms</div>
+        <div class="skill-list">
+          <div class="skill-item"><span class="skill-name">FactoryTalk Optix</span><div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div></div>
+          <div class="skill-item"><span class="skill-name">Studio 5000 / Logix</span><div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div></div>
+          <div class="skill-item"><span class="skill-name">PlantPAx / ControlLogix</span><div class="skill-bar"><div class="skill-fill" style="width:92%"></div></div></div>
+          <div class="skill-item"><span class="skill-name">FTView SE / ME</span><div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div></div>
+          <div class="skill-item"><span class="skill-name">Wonderware InTouch</span><div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div></div>
+          <div class="skill-item"><span class="skill-name">ABB 800xA / Siemens DCS</span><div class="skill-bar"><div class="skill-fill" style="width:72%"></div></div></div>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-title">Programming</div>
+        <div class="skill-list">
+          <div class="skill-item"><span class="skill-name">C# / .NET</span><div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div></div>
+          <div class="skill-item"><span class="skill-name">Python</span><div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div></div>
+          <div class="skill-item"><span class="skill-name">JavaScript / HTML</span><div class="skill-bar"><div class="skill-fill" style="width:82%"></div></div></div>
+          <div class="skill-item"><span class="skill-name">React</span><div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div></div>
+          <div class="skill-item"><span class="skill-name">VB.NET / SQL</span><div class="skill-bar"><div class="skill-fill" style="width:70%"></div></div></div>
+          <div class="skill-item"><span class="skill-name">Pine Script (TradingView)</span><div class="skill-bar"><div class="skill-fill" style="width:78%"></div></div></div>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-title">DevOps &amp; Architecture</div>
+        <div class="skill-list">
+          <div class="skill-item"><span class="skill-name">CI/CD Pipeline Design</span><div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div></div>
+          <div class="skill-item"><span class="skill-name">Automated Test Frameworks</span><div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div></div>
+          <div class="skill-item"><span class="skill-name">Solution Architecture</span><div class="skill-bar"><div class="skill-fill" style="width:92%"></div></div></div>
+          <div class="skill-item"><span class="skill-name">Release Governance</span><div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div></div>
+          <div class="skill-item"><span class="skill-name">GitHub / Git</span><div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div></div>
+          <div class="skill-item"><span class="skill-name">OPC UA / Device API</span><div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div></div>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-title">Leadership</div>
+        <div class="skill-list">
+          <div class="skill-item"><span class="skill-name">Team Leadership (10+ devs)</span><div class="skill-bar"><div class="skill-fill" style="width:92%"></div></div></div>
+          <div class="skill-item"><span class="skill-name">Technical Mentoring</span><div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div></div>
+          <div class="skill-item"><span class="skill-name">Cross-functional Delivery</span><div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div></div>
+          <div class="skill-item"><span class="skill-name">Stakeholder Presentation</span><div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div></div>
+          <div class="skill-item"><span class="skill-name">Technical Documentation</span><div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div></div>
+          <div class="skill-item"><span class="skill-name">Workshop Facilitation</span><div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="contact-inner reveal">
+      <div class="section-tag" style="text-align:center">Let's Connect</div>
+      <div class="section-title" style="text-align:center">Get In Touch</div>
+      <p class="contact-sub">
+        Open to senior architecture roles, technical leadership opportunities, and consulting in industrial automation and SCADA/HMI systems. Based in Pune — available for hybrid and remote.
+      </p>
+      <div class="contact-links">
+        <a href="https://linkedin.com/in/vikram-lokhande" class="contact-link" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn
+        </a>
+        <a href="mailto:your.email@domain.com" class="contact-link">
+          <svg viewBox="0 0 24 24"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 010 19.366V5.457c0-.9.732-1.636 1.636-1.636h.819L12 10.91l9.545-7.09h.819c.904 0 1.636.732 1.636 1.636z"/></svg>
+          Email Me
+        </a>
+        <a href="https://github.com/viklgithub" class="contact-link" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+          GitHub
+        </a>
+        <a href="./assets/resume.pdf" class="contact-link" download>
+          <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+          Download CV
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>© 2026 Vikram R. Lokhande · Pune, India</span>
+  &nbsp;·&nbsp;
+  <span style="color:var(--text-dim)">Built with HTML · Deployable on GitHub Pages</span>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
